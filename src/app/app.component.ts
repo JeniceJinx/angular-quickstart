@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['../demo-styling.css']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-quickstart';
+  title = 'Portfolio';
 }
