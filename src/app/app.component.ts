@@ -1,39 +1,47 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators, NgForm } from '@angular/forms'
-import { ContactService } from './contact.service';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
+import { AppComponent } from './app.component';
+import { FooterComponent } from './sharepage/footer/footer.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ProjectsComponent } from './pages/projects/projects.component';
+import { AboutComponent } from './pages/about/about.component';
+import { AppRoutingModule } from './app-routing.module';
+import { RouterModule } from '@angular/router';
+import { NavComponent } from './sharepage/nav/nav.component';
+import { ContactFormComponent } from './pages/contacts/contacts.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatCommonModule } from '@angular/material/core';
+import {MatCardModule} from '@angular/material/card';
+import { IndprojComponent } from './pages/indproj/indproj.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-
-
-@Component({
-  selector: 'app-contact-form',
-  templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavComponent,
+    FooterComponent,
+    HomeComponent,
+    ProjectsComponent,
+    AboutComponent,
+    ContactFormComponent,
+    IndprojComponent,
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    RouterModule,
+    BrowserAnimationsModule,
+    MatSliderModule,
+    MatCardModule,
+    MatCommonModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class ContactFormComponent implements OnInit {
-  title = 'Portfolio';
-  submitted = false;
-  emailForm!: FormGroup;
- 
-  constructor(private formBuilder: FormBuilder) {}
- 
-  ngOnInit() {
-    this.emailForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-    });
-  }
- 
-  onSubmit() {
-    this.submitted = true;
- 
-    // stop the process here if form is invalid
-    if (this.emailForm.invalid) {
-      return;
-    }
- 
-    alert('SUCCESS!!');
-  }
-}
+export class AppModule { }
