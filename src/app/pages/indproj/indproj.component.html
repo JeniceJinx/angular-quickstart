@@ -1,0 +1,14 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-6" *ngIf= "projectData">
+            <a routerLink="../../projects" class="btn btn-sm btn-dark mb-3">Back</a>
+            <img src="{{projectData[0].projectImage}}" width="100%" />
+            <h1 class="mt-3">{{projectData[0].projectTitle}}</h1>
+            <p>{{projectData[0].projectTech}}</p>
+            <p>{{projectData[0].basicConcept}}</p>
+           <a href="{{projectData[0].projectUrl}}" class="btn btn-info" role="button">
+            <i class="bi bi-github"></i></a> 
+
+        </div>
+    </div>
+</div>
