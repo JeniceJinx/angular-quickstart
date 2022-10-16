@@ -1,0 +1,14 @@
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let pd of projectData">
+            <div class="projectbox">
+                <img src="{{pd.projectImage}}" alt="tech images">
+                <h1>{{pd.projectName}}</h1>
+                <p>{{pd.projectTech}}</p>
+                <p>{{pd.basicConcept}}</p>
+                <br/>
+                <a class="seebtn"  [routerLink]= "['/projects', pd.id]">View Code &nbsp;<i class="bi bi-file-code-fill"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
