@@ -1,0 +1,12 @@
+h1{
+    background-image: url('https://v.ftcdn.net/04/26/22/55/240_F_426225552_M16woiDZrkr8VOZHo7mXbTLEFbzj5efH_ST.mp4');
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+mat-card{
+    background-color: rgba(95, 86, 179, 0.186);
+    
+}
